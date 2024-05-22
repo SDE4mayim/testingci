@@ -1,6 +1,6 @@
 describe('open',() =>{
     it('verify',() =>{
-        cy.visit('/')
+        cy.visit('https://vetcastle.com')
         cy.get(".grow > :nth-child(2) > .font-medium").click()
         cy.title().should("eq","VET CASTLE")
         cy.get(".justify-center > :nth-child(3)").click()

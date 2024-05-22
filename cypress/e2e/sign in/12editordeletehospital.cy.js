@@ -1,6 +1,6 @@
 describe('listofhospitals',() => {
     it('loh',() => {
-        cy.visit('/')
+        cy.visit('https://vetcastle.com')
         cy.get(".grow > :nth-child(2) > .font-medium").click()
         cy.title().should("eq","VET CASTLE")
         cy.url().should("eq","https://vetcastle.com/signin")

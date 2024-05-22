@@ -1,6 +1,6 @@
 describe('contents',()=>{
     it('contents',()=>{
-        cy.visit('/')
+        cy.visit('https://vetcastle.com')
         cy.title().should("eq","VET CASTLE")
         cy.get('.h1').should("exist")
         cy.get('marquee').should("exist")

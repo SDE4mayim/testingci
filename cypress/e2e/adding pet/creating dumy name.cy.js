@@ -1,6 +1,6 @@
 describe('newuser',()=>{
     it('two user',()=>{
-        cy.visit('/')
+        cy.visit('https://vetcastle.com')
         cy.url().should('eq','https://vetcastle.com/')
         cy.get('.btn-sm').click()
         cy.get('.justify-center > :nth-child(3)').click()
