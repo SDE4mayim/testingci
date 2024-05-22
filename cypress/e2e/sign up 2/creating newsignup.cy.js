@@ -1,6 +1,6 @@
 describe('second',()=>{
     it('first',()=>{
-        cy.visit('/')
+        cy.visit('https://vetcastle.com')
         cy.get('.aos-init > .btn').click()
         cy.get('#username').type("visrutha")
         cy.get('#first-name').type("US")

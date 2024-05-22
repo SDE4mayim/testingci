@@ -1,7 +1,7 @@
 describe('open',() =>{
     it('verify',() =>{
         cy.log("visit the website")
-        cy.visit('/')
+        cy.visit('https://vetcastle.com')
         cy.title().should('eq','VET CASTLE')
         cy.url().should('eq','https://vetcastle.com/')
         cy.get('.grow > :nth-child(1) > .font-medium').click()
@@ -12,7 +12,7 @@ describe('open',() =>{
     })
     it('verify',() =>{
         cy.log("visit the website")
-        cy.visit('/')
+        cy.visit('https://vetcastle.com')
         cy.title().should('eq','VET CASTLE')
         cy.url().should('eq','https://vetcastle.com/')
         cy.get('.grow > :nth-child(1) > .font-medium').click()
@@ -23,7 +23,7 @@ describe('open',() =>{
     })
     it('verify',() =>{
         cy.log("visit the website")
-        cy.visit('/')
+        cy.visit('https://vetcastle.com')
         cy.title().should('eq','VET CASTLE')
         cy.url().should('eq','https://vetcastle.com/')
         cy.get('.grow > :nth-child(1) > .font-medium').click()
