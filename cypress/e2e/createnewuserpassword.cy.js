@@ -8,7 +8,7 @@ describe('newuser',()=>{
         cy.get('#username').type('srivathsandv2')
         cy.get('#password').type('1SDE@mayim')  
         cy.get('.btn').click()
-        cy.visit("/maindashboard")
+        cy.visit("https://vetcastle.com/maindashboard")
         
         })              
     })

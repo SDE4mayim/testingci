@@ -7,7 +7,7 @@ describe('open',() =>{
           cy.get('.justify-center > :nth-child(3)').click()
           cy.login(password.username,password.password)
           cy.get('.btn').click()
-          cy.visit("/maindashboard")
+          cy.visit("https://vetcastle.com/maindashboard")
     //    cy.get('.viewbutton').click()
     //    cy.get('[data-testid="EditIcon"]').click()
     //    cy.get('.MuiDialogContent-root > :nth-child(2) > :nth-child(4)').clear()

@@ -11,7 +11,7 @@ describe('first',()=>{
        // cy.login(password.username,password.password)
        
        cy.get('.btn').click()
-        cy.visit("/maindashboard")
+        cy.visit("https://vetcastle.com/maindashboard")
 
 
     })

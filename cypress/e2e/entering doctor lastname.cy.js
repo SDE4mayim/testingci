@@ -8,7 +8,7 @@ describe('open',() =>{
        cy.get('#username').type("srivathsandv2")
        cy.get('#password').type("1SDE@mayim")
        cy.get('.btn').click()
-       cy.visit("/maindashboard")
+       cy.visit("https://vetcastle.com/maindashboard")
        cy.get('[href="/dsd"] > .MuiListItemText-root > .MuiTypography-root').click()
        //cy.get('.viewbutton').click()
        cy.get('[data-id="300001"] > [data-field="action"] > .cellAction > .viewbutton').click()
