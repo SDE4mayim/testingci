@@ -8,7 +8,7 @@ describe('newuser',()=>{
         cy.get('#password').type('1SDE@mayim')
         cy.get('.btn').click()
         cy.wait(1000)
-        cy.visit("/maindashboard")
+        cy.visit("https://vetcastle.com/maindashboard")
         cy.get('[href="/hsd"] > .MuiListItemText-root > .MuiTypography-root').click()
         cy.url().should('eq',"/hsd")
         cy.get('.MuiGrid-container > :nth-child(2) > .MuiButtonBase-root').click()

@@ -10,7 +10,7 @@ describe('open',() =>{
        cy.get('.btn').click()
        cy.wait(1000)
        cy.reload()
-       cy.visit("/maindashboard")
+       cy.visit("https://vetcastle.com/maindashboard")
        cy.get('[href="/dsd"] > .MuiListItemText-root > .MuiTypography-root').click()
        cy.url().should('eq',"/dsd")
        cy.get('[data-id="300001"] > [data-field="action"] > .cellAction > .viewbutton').click()

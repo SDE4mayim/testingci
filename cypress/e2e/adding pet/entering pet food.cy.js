@@ -9,7 +9,7 @@ describe('open',() =>{
        cy.get('#password').type('1SDE@mayim')
        cy.get('.btn').click()
        cy.wait(1000)
-       cy.visit("/maindashboard")
+       cy.visit("https://vetcastle.com/maindashboard")
        cy.get('[href="/psd"] > .MuiListItemText-root > .MuiTypography-root').click()
        cy.url().should('eq',"https://vetcastle.com/psd")
        cy.get('.MuiGrid-container > :nth-child(3) > .MuiButtonBase-root').click()
