@@ -1,5 +1,44 @@
-name: End-to-end tests
-on: [push]
+# name: End-to-end tests
+# on: [push]
+# jobs:
+#   cypress-run:
+#     runs-on: windows-latest
+#     steps:
+#       - name: Checkout
+#         uses: actions/checkout@v3
+#         with:
+#           node-version: '20'
+#       - run: npm install --force
+#       - run: npm install cypress --save-dev --force
+#       - name: Cypress run
+#         run : npx cypress run
+#       - name: Build and deploy
+#         env:
+#           NODE_ENV: production
+#           DB_HOST: 'seamless.herosite.pro',
+#           DB_PORT: 3306
+#           DB_USER: ${{ 'tfeiamho_user007' }}
+#           DB_PASSWORD: ${{ '1Time@p!' }}
+#           DB_DATABASE: ${{ 'tfeiaho_vetcastle
+#           ' }}
+#         run: |
+#           npm run build
+#           npm run deploy
+
+#       - name: Generate file
+#         run: |
+#           echo "Generated file" > generated_file.txt
+#           cat generated_file.txt
+
+
+
+     name: End-to-end tests
+
+on:
+  push:
+    branches:
+      - main
+
 jobs:
   cypress-run:
     runs-on: windows-latest
@@ -8,28 +47,18 @@ jobs:
         uses: actions/checkout@v3
         with:
           node-version: '20'
-      - run: npm install --force
-      - run: npm install cypress --save-dev --force
+
+      - name: Install dependencies
+        run: npm install --force
+
+      - name: Install Cypress
+        run: npm install cypress --save-dev --force
+
       - name: Cypress run
-        run : npx cypress run
+        run: npx cypress run
+
       - name: Build and deploy
         env:
           NODE_ENV: production
-          DB_HOST: 'seamless.herosite.pro',
-          DB_PORT: 3306
-          DB_USER: ${{ 'tfeiamho_user007' }}
-          DB_PASSWORD: ${{ '1Time@p!' }}
-          DB_DATABASE: ${{ 'tfeiaho_vetcastle
-          ' }}
-        run: |
-          npm run build
-          npm run deploy
-
-      - name: Generate file
-        run: |
-          echo "Generated file" > generated_file.txt
-          cat generated_file.txt
-
-
-
-     
+          DB_HOST: 'seamless.herosite.pro'
+          DB_PORT: 3
