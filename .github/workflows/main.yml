@@ -12,3 +12,45 @@ jobs:
       - run: npm install cypress --save-dev --force
       - name: Cypress run
         run : npx cypress run
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install --force
+
+      - name: Install Cypress
+        run: npm install cypress --save-dev --force
+
+      - name: Run Cypress tests
+        run: npx cypress run
+
+      - name: Build and deploy
+        env:
+          NODE_ENV: production
+          DB_HOST: 'seamless.herosite.pro',
+          DB_PORT: 3306
+          DB_USER: ${{ 'tfeiamho_user007' }}
+          DB_PASSWORD: ${{ '1Time@p!' }}
+          DB_DATABASE: ${{ 'tfeiaho_vetcastle
+          ' }}
+        run: |
+          npm run build
+          npm run deploy
+
+      - name: Generate file
+        run: |
+          echo "Generated file" > generated_file.txt
+          cat generated_file.txt
