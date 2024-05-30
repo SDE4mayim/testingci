@@ -1,5 +1,10 @@
 name: End-to-end tests
-on: [push]
+
+on:
+  push:
+    branches:
+      - main
+
 jobs:
   cypress-run:
     runs-on: windows-latest
@@ -11,7 +16,7 @@ jobs:
       - run: npm install --force
       - run: npm install cypress --save-dev --force
       - name: Cypress run
-        run : npx cypress run
+        run: npx cypress run
       - name: Build and deploy
         env:
           NODE_ENV: production
@@ -19,7 +24,7 @@ jobs:
           DB_PORT: 3306
           DB_USER: ${{ 'tfeiamho_user007' }}
           DB_PASSWORD: ${{ '1Time@p!' }}
-          DB_DATABASE: ${{ 'tfeiaho_vetcastle'}}
+          DB_DATABASE: ${{ 'tfeiaho_vetcastle' }}
         run: |
           npm run build
           npm run deploy
@@ -28,7 +33,6 @@ jobs:
         run: |
           echo "Generated file" > generated_file.txt
           cat generated_file.txt
-
 
 
     
