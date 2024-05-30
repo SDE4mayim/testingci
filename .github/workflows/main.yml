@@ -32,7 +32,7 @@ jobs:
       - name: Generate file
         run: |
           echo "Generated file" > generated_file.txt
-          cat generated_file.txt
+          cat generated_file.txt.
 
 
     
