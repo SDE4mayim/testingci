@@ -1,42 +1,36 @@
-# name: End-to-end tests
-# on: [push]
+# name: CI/CD Pipeline
+# on:
+#   push:
+#     branches:
+#       - main
 # jobs:
-#   cypress-run:
+#   build-and-deploy:
 #     runs-on: windows-latest
 #     steps:
-#       - name: Checkout
+#       - name: Checkout code
 #         uses: actions/checkout@v3
 #         with:
 #           node-version: '20'
-#       - run: npm install --force
-#       - run: npm install cypress --save-dev --force
-#       - name: Cypress run
-#         run : npx cypress run
-name: CI/CD Pipeline
-
-on:
-  push:
-    branches:
-      - main
-
+#       - name: Install dependencies
+#         run: npm install --force
+#       - name: Install Cypress
+#         run: npm install cypress --save-dev --force
+#       - name: Run Cypress tests
+#         run: npx cypress run
+name: End-to-end tests
+on: [push]
 jobs:
-  build-and-deploy:
+  cypress-run:
     runs-on: windows-latest
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v3
         with:
           node-version: '20'
-
-      - name: Install dependencies
-        run: npm install --force
-
-      - name: Install Cypress
-        run: npm install cypress --save-dev --force
-
-      - name: Run Cypress tests
-        run: npx cypress run
-
+      - run: npm install --force
+      - run: npm install cypress --save-dev --force
+      - name: Cypress run
+        run : npx cypress run
       - name: Build and deploy
         env:
           NODE_ENV: production
