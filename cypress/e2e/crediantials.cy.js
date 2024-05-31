@@ -1,4 +1,3 @@
-const password=require('../fixtures/password.json');
 describe('open',() =>{
     it('verify',() =>{
        cy.visit('https://vetcastle.com')

@@ -18,7 +18,7 @@ describe('one',()=>{
         cy.get('#city').select("Dharmapuri")
         cy.get('#pincode').type("636808")
         cy.get('.btn').click()
-        cy.url().should('eq',"/signup")
+        cy.url().should('eq',"https://vetcastle.com/signup")
         cy.get('.MuiAlert-message').should("be.visible")   
 
     })

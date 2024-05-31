@@ -1,4 +1,3 @@
-
 describe('open',() =>{
     it('verify',() =>{
         cy.visit('https://vetcastle.com')
@@ -6,7 +5,7 @@ describe('open',() =>{
         cy.title().should("eq","VET CASTLE")
         cy.url().should("eq","https://vetcastle.com/signup")
         cy.get(".border-b-2").click()
-        cy.get("#username").type("_d_v_srivathsan_2017")
+        cy.get("#username").type("_d_v_srivathsan_")
         cy.get("#first-name").type("Srivathsan")
         cy.get("#last-name").type("D V")
         cy.get('#hospitalCategory').select("Private Practices")
@@ -20,7 +19,7 @@ describe('open',() =>{
         cy.get("#city").select("Dharmapuri")
         cy.get("#pincode").type("636705")
         cy.get('.btn').click()
-        cy.get('.MuiAlert-message').should("be.visible")
+        cy.get('.MuiAlert-message').should("contain.text","Error creating Hospital Profile : Profile creation error")
 
     })
 }
