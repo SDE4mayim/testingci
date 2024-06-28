@@ -10,12 +10,20 @@ describe('open',() =>{
        cy.get('.btn').click()
        cy.wait(1000)
        cy.visit("https://vetcastle.com/maindashboard")
-       cy.url().should('eq',"/maindashboard")
+       cy.url().should('eq',"https://vetcastle.com/maindashboard")
        cy.get('[href="/csd"] > .MuiListItemText-root > .MuiTypography-root').click()   
-       cy.url().should('eq',"/csd")
+       cy.url().should('eq',"https://vetcastle.com/csd")
        cy.get('[data-id="400003"] > [data-field="user_name"]').click()
     })
 })
+
+
+
+
+
+
+
+
 
 
 

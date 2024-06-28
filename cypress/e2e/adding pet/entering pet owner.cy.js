@@ -15,5 +15,9 @@ describe('open',() =>{
        cy.get('.MuiGrid-container > :nth-child(6)').click()
        cy.get('[data-value="400001"]').click()
        cy.get('.MuiDialogActions-root > .MuiButtonBase-root').click()
+       cy.on('window:alert', (text) => {
+        expect(text).to.contains('Please fill in all required fields.')
+       })
+       
     })
 })

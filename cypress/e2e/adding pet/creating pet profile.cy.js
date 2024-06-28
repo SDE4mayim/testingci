@@ -26,5 +26,8 @@ describe('open',() =>{
        cy.get(':nth-child(8) > .MuiFormControl-root > .MuiInputBase-root > .MuiSelect-select').click()
        cy.get('[data-value="raw"]').click()
        cy.get('.MuiDialogActions-root > .MuiButtonBase-root').click()
+       cy.on('window:alert', (text) => {
+        expect(text).to.contains('Pet created successfully.');
     })
+})
 })

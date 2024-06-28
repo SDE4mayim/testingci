@@ -14,6 +14,9 @@ describe('open',() =>{
        cy.get('.MuiGrid-container > :nth-child(3) > .MuiButtonBase-root').click()
        cy.get(':nth-child(3) > .MuiFormControl-root > .MuiInputBase-root > .MuiSelect-select').click()
        cy.get('[data-value="female"]').click()
-    
+       cy.get('.MuiDialogActions-root > .MuiButtonBase-root').click()
+       cy.on('window:alert', (text) => {
+        expect(text).to.contains('Please fill in all required fields.');
     })
+})
 })

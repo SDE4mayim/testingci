@@ -10,15 +10,18 @@ describe('open',() =>{
        cy.get('.btn').click()
        cy.wait(1000)
        cy.visit("https://vetcastle.com/maindashboard")
-       cy.url().should('eq',"/maindashboard")
+       cy.url().should('eq',"https://vetcastle.com/maindashboard")
        cy.get('[href="/dsd"] > .MuiListItemText-root > .MuiTypography-root').click()
-       cy.url().should('eq',"/dsd")
+       cy.url().should('eq',"https://vetcastle.com/dsd")
        cy.get('[data-id="300001"] > [data-field="action"] > .cellAction > .viewbutton').click()
        cy.get('[data-testid="EditIcon"]').click()
        cy.get(':nth-child(2) > :nth-child(8)').clear()
        cy.get(':nth-child(2) > :nth-child(8)').type("12345678912")
        cy.get('.MuiDialogActions-root > .MuiGrid-container > :nth-child(2) > :nth-child(1)').click()
+       cy.on('window:alert', (text) => {
+        expect(text).to.contains('Failed to update profile')
        
+    })
     })
 })
 

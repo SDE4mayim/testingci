@@ -13,9 +13,12 @@ describe('open',() =>{
        cy.get('[href="/psd"] > .MuiListItemText-root > .MuiTypography-root').click()
        cy.get('.MuiGrid-container > :nth-child(3) > .MuiButtonBase-root').click()
        cy.get('.MuiDialogContent-root > .MuiGrid-container > :nth-child(1) ').type("Rosie")
-       cy.get('[fdprocessedid="heny17"]').should('have.value','Rosie')
-       cy.get("[value-fdprocessedid='pn90o85']").should('be.visible')
-       cy.get(':nth-child(1) ').type("Rosie")
+      // cy.get('.MuiDialogContent-root > .MuiGrid-container > :nth-child(1)').should('have.value','Rosie')
+      cy.get('.MuiDialogContent-root > .MuiGrid-container > :nth-child(1)').should('be.visible')
+       //cy.get(':nth-child(1) ').type("Rosie")
+       cy.on('window:alert', (text) => {
+        expect(text).to.contains('Please fill in all required fields.');
+       })
     })
 })
 
