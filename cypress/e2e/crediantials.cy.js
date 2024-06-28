@@ -7,9 +7,8 @@ describe('open',() =>{
        cy.get('.w-full > .text-gray-400').should('contain','Hospitals and clinics can use this login')
        cy.get('#username').type("srivathsandv2")
        cy.get('#password').type("1SDE@mayim")
-       //cy.login(password.username,password.password)
-       cy.get('#fdprocessedid="k7viup"').click()
-       cy.wait(1000)
-
+       cy.get('.btn').click() 
+       cy.wait(41)
+       cy.reload()
     })
 })

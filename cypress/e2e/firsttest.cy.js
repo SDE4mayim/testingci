@@ -6,5 +6,4 @@ describe('open',() =>{
         cy.url().should('eq','https://vetcastle.com/')
         
     })
-}
-)
+})

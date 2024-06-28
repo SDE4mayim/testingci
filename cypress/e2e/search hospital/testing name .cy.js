@@ -11,7 +11,7 @@ describe('open',() =>{
        cy.wait(1000)
        cy.visit("https://vetcastle.com/maindashboard")
        cy.get('[href="/hsd"] > .MuiListItemText-root > .MuiTypography-root').click()
-       cy.url().should('eq',"/hsd")
+       cy.url().should('eq',"https://vetcastle.com/hsd")
        cy.get('.MuiGrid-container > :nth-child(2) > .MuiButtonBase-root').click()
        cy.get('#search').type('us__visrutha')
        cy.get('#search').should('have.value','us__visrutha')

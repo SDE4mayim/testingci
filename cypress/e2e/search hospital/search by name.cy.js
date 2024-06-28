@@ -10,7 +10,7 @@ describe('newuser',()=>{
         cy.wait(1000)
         cy.visit("https://vetcastle.com/maindashboard")
         cy.get('[href="/hsd"] > .MuiListItemText-root > .MuiTypography-root').click()
-        cy.url().should('eq',"/hsd")
+        cy.url().should('eq',"https://vetcastle.com/hsd")
         cy.get('.MuiGrid-container > :nth-child(2) > .MuiButtonBase-root').click()
         cy.get('#search').type("sri")
         cy.get('.MuiGrid-container > :nth-child(2) > .MuiButtonBase-root').click()  
